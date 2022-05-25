@@ -1,3 +1,4 @@
+import Encabezado from "./Encabezado"
 const Navbar = () => {
 
     return (
