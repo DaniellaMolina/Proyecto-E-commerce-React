@@ -1,4 +1,5 @@
-import Encabezado from "./Encabezado"
+import CarWidget from "./CarWidget";
+
 const Navbar = () => {
 
     return (
@@ -32,6 +33,7 @@ const Navbar = () => {
           <form role="search">
             <input className="form-control" type="search" placeholder="Search" aria-label="Search"/>
           </form>
+          <CarWidget/>
         </div>
       </div>
         </nav>

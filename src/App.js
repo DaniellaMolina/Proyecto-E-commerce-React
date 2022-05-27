@@ -1,18 +1,17 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './componentes/Navbar.js';
 import Encabezado from './componentes/Encabezado.js';
-
-import './App.css';
+import ItemListContainer from './componentes/ItemListContainer.js';
+import './sass/estilos.scss';
 
 function App() {
   return (
     
-    
-    <div >
-      <header>
-        <Navbar/>
-      </header>
+    <div className= "">
+        <Navbar/>      
       <main role="main">
         <Encabezado/>
+        <ItemListContainer/>
       </main>
     </div>
     
