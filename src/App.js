@@ -1,20 +1,28 @@
+//Bootstrap//
 import 'bootstrap/dist/css/bootstrap.min.css';
+//Scss//
+import './sass/estilos.scss';
+//Componentes//
 import Navbar from './componentes/Navbar.js';
 import Encabezado from './componentes/Encabezado.js';
-import ItemListContainer from './componentes/ItemListContainer.js';
-import './sass/estilos.scss';
+
+import Productos from './componentes/Productos.js'
+import Counter from './componentes/Counter.js';
+
+
 
 function App() {
   return (
     
     <div className= "">
         <Navbar/>      
-      <main role="main">
         <Encabezado/>
-        <ItemListContainer/>
-      </main>
+        <div class="col">
+          <div class="row" id="cuerpo">
+          </div>
+        </div>
+        <Counter/>
     </div>
-    
     
   );
 }

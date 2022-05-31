@@ -1,13 +1,26 @@
 import React from 'react'
+import PropTypes from "prop-types";
 
-const ItemListContainer = () => {
+
+const ItemListContainer = (nombre, img, precio) => {
   return (
-    <div>ItemListContainer
-      <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
-      <p>Back to <a href="../sticky-footer/">the default sticky footer</a> minus the navbar.</p>
-    </div>
+    <div className="card text-center" style="width: 15rem; margin:1rem;">
+      <div className="card-body">
+        <img src={img} id="" className="card-img-top img-fluid" alt=""/>
+        <h2 className="card-title h3">{nombre}</h2>
+        <p className="card-text">${precio}</p>
+        <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button  id="agregar${cake.id}" type="button" onclick="agregarCarrito" className=" agregbtn btn-dark"> Agregar </button>
+        </div>
+      </div>
+  </div>
   )
 }
 
+
+ItemListContainer.propTypes = {
+  nombre: PropTypes.string.isRequired,
+  precio: PropTypes.number,
+  img: PropTypes.string
+};
 export default ItemListContainer;
