@@ -5,7 +5,6 @@ import './sass/estilos.scss';
 //Componentes//
 import Navbar from './componentes/Navbar.js';
 import Encabezado from './componentes/Encabezado.js';
-
 import Productos from './componentes/Productos.js'
 import Counter from './componentes/Counter.js';
 
