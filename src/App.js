@@ -5,8 +5,7 @@ import './sass/estilos.scss';
 //Componentes//
 import Navbar from './componentes/Navbar.js';
 import Encabezado from './componentes/Encabezado.js';
-import Productos from './componentes/Productos.js'
-import Counter from './componentes/Counter.js';
+import ItemListContainer from './componentes/ItemListContainer.js';
 
 
 
@@ -16,11 +15,11 @@ function App() {
     <div className= "">
         <Navbar/>      
         <Encabezado/>
-        <div class="col">
-          <div class="row" id="cuerpo">
+        <div className="col">
+          <div className="row" id="cuerpo">
+          <ItemListContainer/>
           </div>
         </div>
-        <Counter/>
     </div>
     
   );
