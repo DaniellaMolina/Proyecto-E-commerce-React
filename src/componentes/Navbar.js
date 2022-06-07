@@ -1,5 +1,5 @@
 import CarWidget from "./CarWidget";
-import logo2 from "../img/logo1.png"
+import logo2 from "./imagenes/logo1-min.png"
 
 const Navbar = () => {
 

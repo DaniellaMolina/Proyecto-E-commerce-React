@@ -1,4 +1,4 @@
-import inicio from "../img/paginainicio.png"
+import inicio from "./imagenes/paginainicio-min.png"
 
 const Encabezado = () => {
 

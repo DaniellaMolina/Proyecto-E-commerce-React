@@ -24,7 +24,7 @@ const ItemListContainer = ({name}) => {
 
       <div name="test">
 
-        <div className="p-3 mb-2 bg-dark text-white">
+        <div className="row justify-content-md-center cards">
             {name}
 
             <ItemList items={item}/>

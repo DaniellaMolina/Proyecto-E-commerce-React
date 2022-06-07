@@ -1,6 +1,4 @@
 import React from 'react';
-import data from './data.json';
-import {Card} from 'react-bootstrap';
 import Item from './Item'
 
 

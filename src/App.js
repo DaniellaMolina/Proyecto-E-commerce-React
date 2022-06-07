@@ -15,10 +15,9 @@ function App() {
     <div className= "">
         <Navbar/>      
         <Encabezado/>
-        <div className="col">
-          <div className="row" id="cuerpo">
+        
+        <div className="d-flex col card">
           <ItemListContainer/>
-          </div>
         </div>
     </div>
     
