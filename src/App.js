@@ -6,6 +6,7 @@ import './sass/estilos.scss';
 import Navbar from './componentes/Navbar.js';
 import Encabezado from './componentes/Encabezado.js';
 import ItemListContainer from './componentes/ItemListContainer.js';
+import ItemDetailContainer from './componentes/ItemDetailContainer.js';
 
 
 
@@ -18,6 +19,8 @@ function App() {
         
         <div className="d-flex col card">
           <ItemListContainer/>
+          <ItemDetailContainer/>
+
         </div>
     </div>
     

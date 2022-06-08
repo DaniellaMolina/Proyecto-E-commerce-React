@@ -1,7 +1,8 @@
 import React from "react";
 //Bootstrap//
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BsFillCartFill } from "react-icons/bs";
+import CountContainer from "./CountContainer"; 
+
 
 const Item =({jsonpack})=>{
   return(
@@ -12,7 +13,7 @@ const Item =({jsonpack})=>{
         <h3 className="card-title text-secondary">{jsonpack.nombre}</h3>
         <p className="card-text text-secondary">${jsonpack.precio}</p>
         <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-            <button  id="agregar" type="button" className=" agregbtn btn-dark"> Agregar <BsFillCartFill className= "cart-agregar"/> </button>
+        <CountContainer/>
         </div>
       </div>
   </div>
