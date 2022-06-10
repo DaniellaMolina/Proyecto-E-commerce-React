@@ -1,12 +1,12 @@
 import CarWidget from "./CarWidget";
-import logo2 from "./imagenes/logo1-min.png"
+
 
 const Navbar = () => {
 
     return (
       <nav className="navbar navbar-expand-lg rounded" aria-label="Eleventh navbar example">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"><img className="logo-header" src={logo2}/></a>
+          <a className="navbar-brand" href="#"><img className="logo-header" src="https://res.cloudinary.com/proyectoreactcoderhouse/image/upload/v1654815342/img/logo1_o0bffc.png"/></a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

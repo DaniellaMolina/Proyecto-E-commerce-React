@@ -9,7 +9,6 @@ const CarWidget = () => {
     <span className="badge badge-light" id="badge" data-action="cart-can">1</span>
     </div>
     
-  
   )
 }
 

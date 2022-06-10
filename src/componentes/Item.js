@@ -1,8 +1,7 @@
 import React from "react";
 //Bootstrap//
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CountContainer from "./CountContainer"; 
-
+import CountContainer from './CountContainer';
 
 const Item =({jsonpack})=>{
   return(

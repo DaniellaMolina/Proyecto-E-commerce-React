@@ -1,24 +1,30 @@
 import ItemList from './ItemList.js';
-import Item from './Item.js';
 import jsonpack from './data.json';
 import React, {useState} from 'react';
+import { useParams } from "react-router-dom";
 
 
 
 
 const ItemListContainer = ({name}) => {
-    const[item,setItems]=useState([])
-    const call = new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(jsonpack)
-        },2000)
-    })
-
-    call.then(response=> {
-        setItems(response)
-    })
+    const {categoryid}=useParams();
 
 
+    const[cat]=useState(categoryid);
+        const[item,setItems]=useState([])
+        const call = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(jsonpack)
+    
+    
+            },2000)
+        })
+    
+        call.then(response=> {
+            setItems(response)
+        })
+
+        console.log(cat);
 
     return (
 

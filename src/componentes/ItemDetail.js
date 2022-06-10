@@ -12,8 +12,8 @@ const ItemDetail =({jsonpack})=>{
                     <h3 className="card-title text-secondary">{jsonpack.title}</h3>
                     <p className="card-text text-secondary">${jsonpack.price}</p>
                     <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <p>Cantidad{jsonpack.available_quantity}
-                    <ItemCount product_name={jsonpack.title} stock={jsonpack.available_quantity} initial={1}/>
+                    <p>Cantidad Disponible{jsonpack.stock}
+                    <ItemCount product_name={jsonpack.title} stock={jsonpack.stock} initial={1}/>
                     </p>
                     </div>
                 </div>

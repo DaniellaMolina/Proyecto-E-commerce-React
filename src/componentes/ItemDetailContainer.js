@@ -1,38 +1,57 @@
 import React, {useState,useEffect} from 'react';
 import ItemList from './ItemList';
 import ItemDetail from './ItemDetail';
+import productos from './data.json';
+import {useParams} from "react-router-dom";
 
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({items}) => {
 
-    const[productos,setProductos]=useState()
+
+    const[producto,setProducto]=useState([])
+const {itemid}=useParams();
     useEffect(()=>{
 
-    setTimeout(()=>{
-            fetch("https://api.mercadolibre.com/sites/MLA/search?q=baserevlon&limit=1")
-            .then(response=>response.json())
-            .then(data=>setProductos(data.results));
-        },2000)
+
+    if(items)
+    {
+    console.log("Good news item is defined");
+
+    }
+
+    else{
+        items=productos;
+        console.log("badnews");
+            }
 
 
 
-    },[]);
+        const call=new Promise ((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(items)
+            },2000)
+        })
+
+        call.then(response=>{
+            console.log(itemid);
+            console.log(response[itemid-1]);
+            setProducto(response[itemid-1]);
+        })
+    },[])
 
 
     return (
 
-    <div>
+    <div class="p-3 mb-2 bg-dark text-white">
 
-        {
-          productos &&  productos.map(item=>
-
-            <ItemDetail key={item.id} jsonpack={item} />
-
-        )}
+        <ItemDetail  jsonpack={producto}/>
     </div>
 
-   )
+        )
+    
+
+
 }
 
 export default ItemDetailContainer;
