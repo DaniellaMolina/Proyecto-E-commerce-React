@@ -17,7 +17,7 @@ const ItemListContainer = ({name}) => {
                 resolve(jsonpack)
     
     
-            },2000)
+            },1500)
         })
     
         call.then(response=> {

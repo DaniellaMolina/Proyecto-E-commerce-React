@@ -1,56 +1,49 @@
-import React, {useState,useEffect} from 'react';
-import ItemList from './ItemList';
-import ItemDetail from './ItemDetail';
-import productos from './data.json';
-import {useParams} from "react-router-dom";
+import { useEffect, useState } from "react"
+import { Spinner } from "react-bootstrap"
+import { useParams } from "react-router-dom"
+import  jsonpack  from "./data.json"
+import ItemDetail from "./ItemDetail"
 
-
-
-const ItemDetailContainer = ({items}) => {
-
-
-    const[producto,setProducto]=useState([])
-const {itemid}=useParams();
-    useEffect(()=>{
-
-
-    if(items)
-    {
-    console.log("Good news item is defined");
-
-    }
-
-    else{
-        items=productos;
-        console.log("badnews");
-            }
-
-
-
-        const call=new Promise ((resolve,reject)=>{
-            setTimeout(()=>{
-                resolve(items)
-            },2000)
-        })
-
-        call.then(response=>{
-            console.log(itemid);
-            console.log(response[itemid-1]);
-            setProducto(response[itemid-1]);
-        })
-    },[])
-
-
-    return (
-
-    <div class="p-3 mb-2 bg-dark text-white">
-
-        <ItemDetail  jsonpack={producto}/>
-    </div>
-
-        )
+const ItemDetailContainer = () => {
     
+    const [item, setItem] = useState(null)
+    const [loading, setLoading] = useState(true)
 
+    const { itemId } = useParams()
+    console.log(itemId)
+    console.log(item)
+   
+    useEffect(() =>{
+        setLoading(true)
+
+        jsonpack()
+            .then((resp)=> {
+                setItem( resp.find((item) => item.id === Number(itemId) ) )
+        })
+        .catch( (error) =>{
+            console.log("ERROR",error)
+        })
+        .finally( ()=>{
+            setLoading(false)
+        })
+    }, [itemId])
+
+    return(
+        
+        <section className="cardsContainer container my-5">
+
+            {
+                loading 
+                ?   <Spinner animation="border" role="status" className="spiner">
+                        <span className="visually-hidden"></span>
+                    </Spinner> 
+
+                    : <ItemDetail item={item}/>
+            }
+        </section>
+
+
+    )
 
 }
 

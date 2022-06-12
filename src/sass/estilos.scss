@@ -3,90 +3,116 @@
   margin: 0;
 }
 //Navbar//
-//Navbar//
 .navbar {
-    background-color: transparent !important;
-    position: absolute;
-    width: 100%;
-    }
-    
-.navbar-nav {
-    margin-left: 27rem;
-}
-.nav-link {
-    text-decoration: none;
-    color: #3e3e3e;
+  background-color: #dbbebd;
+  position: relative;
+  width: 100%;
 }
 
+#primer-navbar {
+  margin-left: 25rem;
+  padding-left: 10rem;
+}
+
+.form-control {
+  width: 25rem;
+} 
+  
+.segundo-nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #8b716f;
+}
+
+.nav-caja {
+  text-align: center;
+  border: solid #dbbebd;
+  background-color: #dbbebd;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-caja:hover {
+  background-color: #efe3e2;
+  color: #8b716f;
+}
 .badge {
-    position: relative;
-    top: -20px;
-    left: -20px;
-    border: 1px solid red;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-   }
+  position: relative;
+  top: -2.9rem;
+  left: 1.4rem;
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+ }
 
 .shopping-cart {
-    padding: 2rem;
+  padding: 1rem;
+  margin-left: 2rem;
 }
 
 .cart {
-    height: 3rem;
-    width: 2.5rem;
+  height: 3rem;
+  width: 2.5rem;
 }
 
 .logo-header{
-    height: 7rem;
+  height: 7rem;
 }
 
 //Pagina de inicio//
 .imgInicio{
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 
 // CARDS//
 #cards-productos {
-width: 18rem;
-padding: 1rem;
-margin: 1rem;
-border: solid hwb(0 47% 53%);
-}
-
-.card-title {
-  font-size: 1rem;
-}
-
-
-.cards{
-width: 100%;
-padding: 0;
-margin: 0;
-}
-
-
-.menos {
-    margin: 0.5rem;
-}
-.mas {
-    margin: 0.5rem;
-}
-
-.cantidad {
-    padding: 0.2rem;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.agregar {
-    height: 3rem;
-    width: 7rem;
-    border-radius: 1rem;
-}
-
-
+  width: 18rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: solid #d3c1bf;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  
+  .cards{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+  
+  
+  .menos {
+      margin: 0.5rem;
+  }
+  .mas {
+      margin: 0.5rem;
+  }
+  
+  .cantidad {
+      padding: 0.2rem;
+      display: flex;
+      flex-direction: row;
+  
+  }
+  
+  .agregar {
+      height: 3rem;
+      width: 7rem;
+      border-radius: 1rem;
+  }
+  
+  
+  

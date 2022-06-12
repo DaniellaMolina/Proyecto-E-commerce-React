@@ -1,47 +1,16 @@
 import React from 'react';
-import Item from './Item'
-import { useParams } from "react-router-dom";
-import  {useEffect} from 'react';
+import Item from './Item';
 
-let count=1;
-const ItemList = ({items}) =>{
-useEffect(()=>{
-    if(count==1&& (categoryid>2 ||categoryid<=0))
-        alert("Solo categorias 1-2 están disponibles por favor cambiar categoria");
-count=count+1;
-});
+const ItemList = ( {items} ) =>{
 
-const {categoryid}=useParams(null);
-    let ListTemplate;
-    console.log(categoryid);
+    return(
+        <div className="row">
+            <h2>Nuestros Productos</h2>
 
-
-
-
-
-    if (!categoryid) {
-
-    console.log("In the function dude");
-      ListTemplate = items.map(item=><Item key={item.id} jsonpack={item} />);
-
-
-    }
-else {
-    console.log(categoryid);
-    // eslint-disable-next-line eqeqeq
-    ListTemplate=items.filter(item=>item.categoryid==categoryid).map(filteredName=>(<Item key={filteredName.id} jsonpack={filteredName}/>));
-
-}
-
-
-
-
-
-
-    return (
-        <>
-        {ListTemplate}
-        </>
+            {
+                items.map((items) => <Item key={items.id} items={items} />)
+            }
+        </div>
 
     )
 }
