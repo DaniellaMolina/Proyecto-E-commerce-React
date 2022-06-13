@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import  jsonpack  from "./data.json"
+import {PedirDatos} from './pedirDatos.js'
 import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
     useEffect(() =>{
         setLoading(true)
 
-        jsonpack()
+        PedirDatos()
             .then((resp)=> {
                 setItem( resp.find((item) => item.id === Number(itemId) ) )
         })

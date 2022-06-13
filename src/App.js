@@ -7,7 +7,7 @@ import Navbar from './componentes/Navbar';
 import Navbar2 from './componentes/Navbar2.js';
 import Encabezado from './componentes/Encabezado.js';
 import ItemListContainer from './componentes/ItemListContainer.js';
-import {BrowserRouter,Routes} from 'react-router-dom';
+import {BrowserRouter,Routes, Route, Navigate} from 'react-router-dom';
 import ItemDetailContainer from './componentes/ItemDetailContainer.js';
 
 
@@ -18,11 +18,14 @@ function App() {
       <Navbar/>
       <Navbar2/>
       <Encabezado/>
- 
-      <Routes exact path="/" element={<ItemListContainer name="Escoger Producto a Comprar"/>}/>
-      <Routes path="/categories/:categoryid" element={<ItemListContainer/>}/>
-      <Routes className="d-flex col card" path="/categories" element={<ItemListContainer/>}/>
-      <Routes path="/item/:itemid" element={<ItemDetailContainer/>}/>
+
+
+      <Routes>  
+        <Route path='/' element= {<ItemListContainer/>}/>
+        <Route path='/categorias/:categoryId' element={ <ItemListContainer/>}/>
+        <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
+        <Route path='*' element={ <Navigate to={"/"} /> } />
+      </Routes>
 
     </BrowserRouter>
     
@@ -30,4 +33,3 @@ function App() {
 }
 
 export default App;
-

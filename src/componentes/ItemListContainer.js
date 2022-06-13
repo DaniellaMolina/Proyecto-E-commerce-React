@@ -1,43 +1,59 @@
-import ItemList from './ItemList.js';
-import jsonpack from './data.json';
-import React, {useState} from 'react';
+import React from 'react'
+import ItemList from './ItemList';
+import {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
+import {PedirDatos} from './pedirDatos.js'
+import { Spinner } from "react-bootstrap"
 
 
 
 
-const ItemListContainer = ({name}) => {
-    const {categoryid}=useParams();
-
-
-    const[cat]=useState(categoryid);
-        const[item,setItems]=useState([])
-        const call = new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                resolve(jsonpack)
+const ItemListContainer = () => {
     
-    
-            },1500)
-        })
-    
-        call.then(response=> {
-            setItems(response)
-        })
+    const[items, setItems]=useState([])
+    const [loading, setLoading] = useState(true)
+    const { categoryId } = useParams();
+  
 
-        console.log(cat);
+    useEffect(() => {
+        setLoading(true)
+
+        PedirDatos()
+            .then((resp) => {
+                if (!categoryId) {
+                    setItems( resp )
+                } else {
+                    setItems( resp.filter((item) => item.categoryid === categoryId) )
+                }
+            })
+            .catch((error) => {
+                console.log('ERROR', error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+
+    }, [categoryId])
+        
 
     return (
 
       <div name="test">
 
         <div className="row justify-content-md-center cards">
-            {name}
+            
 
-            <ItemList items={item}/>
+            {
+                loading
+                ?   <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+
+                :  <ItemList items={items}/>
+            }
         </div>
       </div>
    );
-};
-
+}
 
 export default ItemListContainer;
