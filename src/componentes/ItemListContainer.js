@@ -16,24 +16,30 @@ const ItemListContainer = () => {
   
 
     useEffect(() => {
-        setLoading(true)
 
+        setLoading(true);
+    
         PedirDatos()
-            .then((resp) => {
-                if (!categoryId) {
-                    setItems( resp )
-                } else {
-                    setItems( resp.filter((item) => item.categoryid === categoryId) )
-                }
-            })
-            .catch((error) => {
-                console.log('ERROR', error)
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-
-    }, [categoryId])
+    
+          .then((resp) => {
+    
+            setItems(resp.filter((item) => item.id === Number(categoryId)));
+    
+          })
+    
+          .catch((error) => {
+    
+            console.log("ERROR", error);
+    
+          })
+    
+          .finally(() => {
+    
+            setLoading(false);
+    
+          });
+    
+      }, [categoryId]);
         
 
     return (

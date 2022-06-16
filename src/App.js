@@ -21,11 +21,11 @@ function App() {
 
 
       <Routes>  
-        <Route path='/' element= {<ItemListContainer/>}/>
-        <Route path='/categorias/:categoryId' element={ <ItemListContainer/>}/>
-        <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
-        <Route path='*' element={ <Navigate to={"/"} /> } />
-      </Routes>
+     <Route path='/' element= {<ItemListContainer/>}/>
+     <Route path='/categorias/:categoryId' element={ <ItemListContainer/>}/>
+     <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
+     <Route path='/cart' element={ <Navigate to={"/"} /> } />
+     </Routes>
 
     </BrowserRouter>
     
@@ -33,3 +33,4 @@ function App() {
 }
 
 export default App;
+

@@ -8,19 +8,19 @@ const Navbar2 = () => {
       <Navbar>
         <Nav className="segundo-nav">
             <NavDropdown.Item className="nav-caja">
-              <Link className="nav-link" to={`/categories/1`}>BASES</Link>
+              <Link className="nav-link" to={`/categorias/1`}>BASES</Link>
             </NavDropdown.Item>
             <NavDropdown.Item className="nav-caja" >
-              <Link className="nav-link" to={`/categories/2`}>LABIALES</Link>
+              <Link className="nav-link" to={`/categorias/2`}>LABIALES</Link>
             </NavDropdown.Item>
             <NavDropdown.Item className="nav-caja">
-              <Link className="nav-link" to={`/categories/5`}>MASCARA DE PESTAÑAS</Link>
+              <Link className="nav-link" to={`/categorias/5`}>MASCARA DE PESTAÑAS</Link>
             </NavDropdown.Item>
             <NavDropdown.Item className="nav-caja">
-              <Link className="nav-link" to={`/categories/3`}>SOMBRAS</Link>
+              <Link className="nav-link" to={`/categorias/4`}>SOMBRAS</Link>
             </NavDropdown.Item>            
             <NavDropdown.Item className="nav-caja">
-              <Link className="nav-link" to={`categories/4`}>BROCHAS</Link>
+              <Link className="nav-link" to={`/categorias/3`}>BROCHAS</Link>
             </NavDropdown.Item>
         </Nav>
       </Navbar>
