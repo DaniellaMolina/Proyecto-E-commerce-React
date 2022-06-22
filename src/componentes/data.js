@@ -6,7 +6,8 @@ const data = [
       "precio": 1090,
       "img": "https://res.cloudinary.com/proyectoreactcoderhouse/image/upload/v1654814464/img/1_jv57o2.jpg",
       "stock": 5,
-      "categoryid":1
+      "categoryid":1,
+      "descrip": "Base de alta cobertura True Match, deja la piel alisada y sin imperfecciones para un look increíble."
     },
     {
       "id": 1,
@@ -14,7 +15,8 @@ const data = [
       "precio": 720,
       "img": "https://res.cloudinary.com/proyectoreactcoderhouse/image/upload/v1654814464/img/2_j8kbsr.jpg",
       "stock": 6,
-      "categoryid":1
+      "categoryid":1,
+      "descrip": "Corrector True Match Cream Light N 3-4 12ml"
     },
     {
       "id": 2,
@@ -22,7 +24,8 @@ const data = [
       "precio": 495,
       "img": "https://res.cloudinary.com/proyectoreactcoderhouse/image/upload/v1654814464/img/3_pc8vfv.jpg",
       "stock": 7,
-      "categoryid":1
+      "categoryid":1,
+      "descrip": "Un corrector de color y un corrector en crema de tono claro para ayudarte a lograr una piel de aspecto impecable. El amarillo oculta las decoloraciones azuladas de la piel. Fórmula suave y cremosa, resistente a la transferencia, resistente al agua y se esfuma suavemente hasta un acabado aterciopelado."
     },
     {
       "id": 3,
@@ -30,7 +33,9 @@ const data = [
       "precio": 869,
       "img": " https://res.cloudinary.com/proyectoreactcoderhouse/image/upload/v1654814464/img/4_pcoaqz.jpg",
       "stock": 10,
-      "categoryid":1
+      "categoryid":1,
+      "descrip": "Base + corrector ultralujosa, con poderosa mezcla de manteca de Murumuru, manteca de Cupuaçu y manteca de Tucuma. Su textura cremosa se funde en la piel dejando un brillo natural, mientras que su fórmula liviana y de larga duración proporciona una cobertura increíble."
+
     },
     {
       "id": 4,
@@ -38,7 +43,8 @@ const data = [
       "precio": 495,
       "img": "https://res.cloudinary.com/proyectoreactcoderhouse/image/upload/v1654814464/img/5_plxcmg.jpg",
       "stock": 8,
-      "categoryid":1
+      "categoryid":1,
+      "descrip": "Un corrector de color y un corrector en crema de tono claro para ayudarte a lograr una piel de aspecto impecable. El amarillo oculta las decoloraciones azuladas de la piel. Fórmula suave y cremosa, resistente a la transferencia, resistente al agua y se esfuma suavemente hasta un acabado aterciopelado."
     },
     {
       "id": 5,
@@ -46,7 +52,9 @@ const data = [
       "precio": 815,
       "img": "https://res.cloudinary.com/proyectoreactcoderhouse/image/upload/v1654814464/img/6_bxewox.jpg",
       "stock": 5,
-      "categoryid":1
+      "categoryid":1,
+      "descrip": "¡Un bronzer mate ultralujoso resistente al agua manteca Monoi y Murumuru para brindar una apariencia tahitiana mate de larga duración! Su textura cremosa y suave combina las mejores características de un bronzer en polvo y crema para brindar un acabado mate con aerógrafo como ningún otro."
+
     },
     {
       "id": 6,

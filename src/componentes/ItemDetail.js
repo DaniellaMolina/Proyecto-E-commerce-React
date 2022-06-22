@@ -1,52 +1,50 @@
-import ItemCount from './CountContainer';
-
-const ItemDetailButton =({contador})=>{
-    
-    console.log("Contador"+contador);
-    const  onAdd=({e})=>{
-    console.log("Estoy en onAdd ItemDetail y count:");
-    document.getElementById("but1").style.display="block";
-    document.getElementById("but2").style.display="none";
-    alert("El producto seleccionado se agregó al carrito");
-    }
-
-    return(
-        <>
-
-        <button disabled={contador===0} id="but2" onClick={onAdd}>Agregar a carrito</button>
-
-        </>
-    );
-};
+import CartContext from './CartContext';
+import { useState, useContext} from "react";
+import {Link} from 'react-router-dom';
+import ItemCount from './ItemCount';
 
 const ItemDetail =({item})=>{
-    console.log("Detalle de ItemDetail:",item);
+    const {addItem, isInCart} = useContext(CartContext)
 
+    const [cantidad, setCantidad] = useState(0)
 
-    function Terminar(){
-        window.location.href="/cart";
+    const handleAgregar = () =>{
+
+        if (cantidad === 0) return
+
+        const itemToCart = {
+            ...item,
+            cantidad
+        }
+        addItem(itemToCart) 
     }
 
     if (item) {
         
         return(
         
-        <div>
-            <h1>Detalle de producto</h1>
-            <div className="card text-center" id="cards-productos">
-                <div className="card-body">
-                    <img src={item?.img} id="" className="card-img-top img-fluid" alt=""/>
-                    <h3 className="card-title text-secondary">{item?.title}</h3>
-                    <p className="card-text text-secondary">${item?.price}</p>
-                    <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <p>Cantidad disponible:{item?.stock}
-                    <ItemCount product_name={item?.title} stock={item?.stock} initial={1}/>
-                    <button id="but1" style={{display:'none'}}  onClick={Terminar}>Terminar mi compra</button>
-                    </p>
-                    </div>
+            <div className="itemDetail container my-5">
+            <img className="imgDetail" alt={item.nombre} src={item.img} />
+        
+            <div className="dataPrd">
+                <h2>{item.nombre}</h2>
+                <p className="itemDescr">{item.descrip}</p>
+                <strong className="prodcPrecio">${item.precio}</strong>
+
+                <div className="precioItem">
+                    {
+                        isInCart(item.id)
+                        ? <Link to={"/cart"}><button className="btn btn-success">Finalizar mi compra</button></Link>
+                        :
+                        <ItemCount
+                        max={item.stock}
+                        counter = {cantidad}
+                        setCounter={setCantidad}
+                        handleAgregar ={handleAgregar}
+                        />
+                    }          
                 </div>
             </div>
-            
         </div>
 
     );
@@ -59,4 +57,3 @@ const ItemDetail =({item})=>{
 };
 
 export default ItemDetail;
-export {ItemDetailButton};

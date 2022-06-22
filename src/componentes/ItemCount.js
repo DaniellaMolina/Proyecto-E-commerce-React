@@ -1,26 +1,40 @@
 import React from "react";
-import {Button} from 'react-bootstrap';
-import { BsFillCartFill } from "react-icons/bs";
-import ItemDetailButton from "./ItemDetail"
 
 
-const ItemCount=({min,max,onAdd,count,stock})=>{
+const ItemCount = ( {max, setCounter, counter, handleAgregar} ) =>{
 
-    console.log("En item count:"+count);
+    const handleSumar = () =>{
+        counter < max && setCounter(counter + 1)
+    }
+
+    const handleRestar = () =>{
+        counter > 0 && setCounter(counter - 1)
+    }
+
+    if (max === 0) {
+        return(
+            <div className="my-3">
+                <strong>No hay stock para este producto</strong>
+            </div>
+        )
+    }
+
     return (
+            <div >
+                <p className="cantText">Cantidad:</p>
 
-        <div className="botones">
-            <div className="cantidad">
-                <Button className="menos btn-dark" onClick={min}>-</Button>
-                <div>{count}</div>
-                <Button className="mas btn-dark" onClick={max}>+</Button>
+                <div className="my-3 buttons">  
+                    <button className="btn btn-outline-danger btnOpe" onClick={handleRestar} disabled= {counter === 0}>-</button>
+
+                    <span className="cantProd my-2" >{counter}</span>
+
+                    <button className="btn btn-outline-success btnOpe" onClick= {handleSumar} disabled= {counter === max}>+</button>
+                </div>
+                
+                <button disabled={counter === 0} className="btn btn-dark btncCarrito cart-agregar" onClick={handleAgregar} >Añadir al carrito</button>    
             </div>
-            <div>
-            <Button className="btn-dark agregar" disabled={count === 0} onClick={onAdd}>Agregar<BsFillCartFill className="cart-agregar"/></Button>
-            <ItemDetailButton contador={count}/>
-            </div>
-        </div>
     )
-};
+}
+
 
 export default ItemCount;
